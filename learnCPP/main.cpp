@@ -32,5 +32,49 @@ int main(int argc, const char *argv[])
     obj6 = Object(); // move assignment operator
     cout << "\n*****************************************\n";
 
+    cout << "========= Two Dimensional Array =============\n";
+    int *p = new int[5];
+    for (int i = 0; i < 5; i++)
+    {
+        p[i] = i + 1;
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        cout << p[i] << "\n";
+    }
+    delete[] p;
+    static int a = 0;
+    int **q;
+    q = new int *[3];
+    for (int i = 0; i < 3; i++)
+    {
+        q[i] = new int[3];
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            q[i][j] = a++;
+        }
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << q[i][j] << " => " << &q[i][j] << "\t";
+        }
+        cout << "\n";
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        cout << q[i] << " ";
+        delete[] q[i];
+    }
+    cout << "\n";
+    delete[] q;
+
+    cout << "=============================================\n";
+
     return 0;
 }
