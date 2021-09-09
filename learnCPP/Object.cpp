@@ -9,7 +9,7 @@
 
 Object::Object()
 {
-    std::cout << "Default Constructor ------>\n";
+    std::cout << "Default Constructor \n";
     str = new char[12];
     std::string s = "Hello World";
     for (int i = 0; i < s.length(); i++)
@@ -21,7 +21,7 @@ Object::Object()
 
 Object::Object(string s)
 {
-    std::cout << "Parameter Constructor ------>\n";
+    std::cout << "Parameter Constructor \n";
     this->str = new char[s.length() + 1];
     for (int i = 0; i < s.length(); i++)
     {
@@ -32,7 +32,7 @@ Object::Object(string s)
 
 Object::~Object()
 {
-    std::cout << "Destructor ------>\n";
+    std::cout << "Destructor \n";
     if (str != nullptr)
     {
         delete[] str;
@@ -42,7 +42,7 @@ Object::~Object()
 
 Object::Object(const Object &obj)
 {
-    std::cout << "Copy Constructor ------>\n";
+    std::cout << "Copy Constructor \n";
     int len = 0;
     while (obj.str[len] != '\0')
     {
@@ -58,7 +58,7 @@ Object::Object(const Object &obj)
 
 Object &Object::operator=(const Object &obj)
 {
-    cout << "Assignment Operator --->\n";
+    cout << "Assignment Operator \n";
     // check for self assignment
     if (this == &obj)
     {
@@ -81,14 +81,14 @@ Object &Object::operator=(const Object &obj)
 
 Object::Object(Object &&obj)
 {
-    std::cout << "Move Constructor ------>\n";
+    std::cout << "Move Constructor \n";
     this->str = obj.str;
     obj.str = nullptr;
 }
 
 Object &Object::operator=(Object &&obj)
 {
-    std::cout << "Move Assignment operator ------>\n";
+    std::cout << "Move Assignment operator \n";
     this->str = obj.str;
     obj.str = nullptr;
     return (*this);

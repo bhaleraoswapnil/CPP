@@ -6,6 +6,7 @@
 //
 // clang++ -std=c++11 -stdlib=libc++ main.cpp Object.hpp Object.cpp
 #include "Object.hpp"
+#include "myVector.hpp"
 void printObject(Object obj)
 {
 }
@@ -75,6 +76,17 @@ int main(int argc, const char *argv[])
     delete[] q;
 
     cout << "=============================================\n";
+
+    cout << "~~~~~~~~~~~~~~~~~~ My Vector ~~~~~~~~~~~~~~~~~\n";
+    myVector v1;
+    v1.printData();
+
+    for (int i = 1; i < 100; i++)
+    {
+        v1.push_back(i);
+        v1.printData();
+    }
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 
     return 0;
 }
