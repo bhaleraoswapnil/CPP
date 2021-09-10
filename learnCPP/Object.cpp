@@ -28,6 +28,7 @@ Object::Object(string s)
         str[i] = s[i];
     }
     str[s.length()] = '\0';
+    cout << this->str << endl;
 }
 
 Object::~Object()
