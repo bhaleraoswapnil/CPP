@@ -4,7 +4,7 @@
 //
 //  Created by Swapnil Bhalerao on 06/09/21.
 //
-// clang++ -std=c++11 -stdlib=libc++ main.cpp Object.hpp Object.cpp
+// clang++ -std=c++11 -stdlib=libc++ -fno-elide-constructors main.cpp Object.hpp Object.cpp myVector.hpp myVector.cpp
 #include "Object.hpp"
 #include "myVector.hpp"
 void printObject(Object obj)
@@ -81,11 +81,13 @@ int main(int argc, const char *argv[])
     myVector v1;
     v1.printData();
 
-    for (int i = 1; i < 100; i++)
+    for (int i = 1; i < 10; i++)
     {
         v1.push_back(i);
         v1.printData();
     }
+    myVector v2 = myVector();
+
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 
     return 0;

@@ -16,14 +16,15 @@ class myVector
 {
 private:
     int *mpData;
-    int mSize;
-    int mCap;
+    int mCurrent;
+    int mCapacity;
 
 public:
     myVector();
-    myVector(const myVector &) = delete;
-    myVector &operator=(const myVector &) = delete;
+    myVector(const myVector &);
+    myVector &operator=(const myVector &);
     myVector(myVector &&);
+    ~myVector();
     void push_back(int);
     void printData();
 };
